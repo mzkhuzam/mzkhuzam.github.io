@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Maya Khuzam</title>
+    <title>Khuzam</title>
     <link>http://localhost:4321/</link>
       <atom:link href="http://localhost:4321/index.xml" rel="self" type="application/rss+xml" />
-    <description>Maya Khuzam</description>
+    <description>Khuzam</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:4321/media/icon_hu7729264130191091259.png</url>
-      <title>Maya Khuzam</title>
+      <title>Khuzam</title>
       <link>http://localhost:4321/</link>
     </image>
     
@@ -283,7 +283,7 @@
 
 
 
-&lt;div id=&#34;chart-254187396&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-485127963&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   async function fetchChartJSON() {
     console.debug(&#39;Hugo Blox fetching chart JSON...&#39;)
@@ -301,7 +301,7 @@
 
       fetchChartJSON().then(chart =&gt; {
         console.debug(&#39;Plotting chart...&#39;)
-        window.Plotly.newPlot(&#39;chart-254187396&#39;, chart.data, chart.layout, {responsive: true});
+        window.Plotly.newPlot(&#39;chart-485127963&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
