@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Khuzam</title>
-    <link>http://localhost:4321/cv/</link>
-      <atom:link href="http://localhost:4321/cv/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://mzkhuzam2.github.io.git/cv/</link>
+      <atom:link href="https://mzkhuzam2.github.io.git/cv/index.xml" rel="self" type="application/rss+xml" />
     <description>Khuzam</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language>
     <image>
-      <url>http://localhost:4321/media/icon_hu5527679683855124419.png</url>
+      <url>https://mzkhuzam2.github.io.git/media/icon_hu5527679683855124419.png</url>
       <title>Khuzam</title>
-      <link>http://localhost:4321/cv/</link>
+      <link>https://mzkhuzam2.github.io.git/cv/</link>
     </image>
     
   </channel>
