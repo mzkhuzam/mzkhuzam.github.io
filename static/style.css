@@ -78,6 +78,13 @@ nav ul a.active {
   font-weight: 500;
 }
 
+object {
+  display: block;
+  margin-top: 1.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+
 /* ── Home Layout ──────────────────────────────────── */
 .home-layout {
   flex: 1;
@@ -108,8 +115,8 @@ nav ul a.active {
 
 .avatar-wrap {
   width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  height: 400px;
+  border-radius: 0;
   overflow: hidden;
   background: var(--rule);
   margin-bottom: 1.25rem;
