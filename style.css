@@ -1,0 +1,458 @@
+/* ── Reset & Base ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:       #1a1a18;
+  --ink-soft:  #4a4a46;
+  --ink-faint: #8a8a84;
+  --rule:      #e4e2dc;
+  --bg:        #faf9f6;
+  --bg-card:   #f4f2ed;
+  --accent:    #7a5c3a;
+  --accent-lt: #f0ebe2;
+
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+
+  --max-w: 960px;
+  --nav-h: 60px;
+}
+
+html { font-size: 17px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Nav ──────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-name {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+nav ul a:hover,
+nav ul a.active {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Home Layout ──────────────────────────────────── */
+.home-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  max-width: var(--max-w);
+  margin: 5rem auto 4rem;
+  padding: 0 2rem;
+  flex: 1;
+}
+
+/* ── Profile Sidebar ──────────────────────────────── */
+.profile-col {
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.avatar-wrap {
+  width: 160px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--bg-card);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(15%);
+  transition: filter 0.3s;
+}
+.avatar:hover { filter: grayscale(0%); }
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-info h1 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.25rem;
+}
+
+.role {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.affiliation {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ── Social Links ─────────────────────────────────── */
+.social-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+  margin-top: 0.25rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.social-links a:hover { color: var(--ink); }
+
+.social-links svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* ── Bio Column ───────────────────────────────────── */
+.bio-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.bio-col h2 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.bio-col p {
+  margin-bottom: 1rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ── Interests & Education ────────────────────────── */
+.interests-education {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.interests-education h3 {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.85rem;
+}
+
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tag-list li {
+  font-size: 0.78rem;
+  background: var(--accent-lt);
+  color: var(--accent);
+  padding: 0.2rem 0.65rem;
+  border-radius: 2px;
+  border: 1px solid #ddd5c8;
+}
+
+.edu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edu-list li {
+  display: flex;
+  flex-direction: column;
+}
+
+.degree {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.school {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* ── Page Layout (CV, Contact) ────────────────────── */
+.page-layout {
+  max-width: 720px;
+  margin: 5rem auto 4rem;
+  padding: 0 2rem;
+  flex: 1;
+}
+
+.page-header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1.25rem;
+}
+
+.page-layout > h1 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.page-header-row h1 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+/* ── CV Sections ──────────────────────────────────── */
+.cv-section {
+  margin-bottom: 2.75rem;
+}
+
+.cv-section h2 {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  align-items: start;
+}
+
+.cv-year {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  padding-top: 0.15rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.cv-content {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.cv-content strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.cv-content a {
+  color: var(--accent);
+}
+
+.cv-prose {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.cv-prose a { color: var(--accent); }
+
+/* ── Download Button ──────────────────────────────── */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.4rem 0.9rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.download-btn:hover {
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+}
+.download-btn svg { width: 14px; height: 14px; }
+
+/* ── Contact Page ─────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 1.4rem 1.25rem;
+  transition: border-color 0.15s;
+}
+.contact-card:hover { border-color: #ccc6bb; }
+
+.contact-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-lt);
+  border-radius: 2px;
+  color: var(--accent);
+}
+.contact-icon svg { width: 18px; height: 18px; }
+
+.contact-card h3 {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.35rem;
+}
+
+.contact-card a,
+.contact-card p {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.contact-card a:hover { color: var(--ink); }
+
+/* ── Footer ───────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  margin-top: auto;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 700px) {
+  .home-layout {
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+  }
+  .profile-col {
+    flex: none;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .avatar-wrap { width: 100px; height: 130px; }
+  .profile-info { text-align: left; }
+  .social-links {
+    border-top: none;
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .interests-education { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .cv-entry { grid-template-columns: 1fr; gap: 0.25rem; }
+  .cv-year { color: var(--ink-faint); font-size: 0.75rem; }
+  nav { padding: 0 1rem; }
+  nav ul { gap: 1.2rem; }
+}
